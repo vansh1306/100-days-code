@@ -1,0 +1,23 @@
+class Solution {
+    public int heightChecker(int[] heights) {
+        // Clone the original array to create a separate array which we can sort
+        int[] expectedHeights = heights.clone();
+      
+        // Sort the expectedHeights array to have the heights in ascending order
+        Arrays.sort(expectedHeights);
+      
+        // Initialize a counter to keep track of the number of heights in the wrong position
+        int countMismatchedHeights = 0;
+      
+        // Iterate over the heights array to compare each element with the corresponding element in the sorted expectedHeights array
+        for (int i = 0; i < heights.length; ++i) {
+            // If the height in original order does not match the height in sorted order, increment the counter
+            if (heights[i] != expectedHeights[i]) {
+                countMismatchedHeights++;
+            }
+        }
+      
+        // Return the total number of heights that are out of place when compared to the sorted order
+        return countMismatchedHeights;
+    }
+}
