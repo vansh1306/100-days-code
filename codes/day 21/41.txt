@@ -1,0 +1,19 @@
+class Solution:
+
+     def is Palindrome(self,n):
+
+           n = str(n)
+
+           rev = str(n)[: : -1]
+
+           a = int(rev)
+
+          n = int(n)
+
+          if n == a:
+
+              return True
+
+         else:
+
+            return False
