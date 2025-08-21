@@ -1,0 +1,24 @@
+import java.util.Set;
+import java.util.HashSet;
+
+class Solution {
+    // Method to determine the maximum number of different types of candies
+    // one can eat if only allowed to eat n / 2 of them
+    public int distributeCandies(int[] candyTypes) {
+        // Creating a HashSet to store unique candy types
+        Set<Integer> uniqueCandyTypes = new HashSet<>();
+      
+        // Iterating over the array of candy types
+        for (int candyType : candyTypes) {
+            // Adding the candy type to the set to ensure uniqueness
+            uniqueCandyTypes.add(candyType);
+        }
+      
+        // Calculating the half number of total candies
+        int halfCandies = candyTypes.length / 2;
+      
+        // The number of types one can eat is the minimum of
+        // half the total number of candies and the number of unique candy types
+        return Math.min(halfCandies, uniqueCandyTypes.size());
+    }
+}
